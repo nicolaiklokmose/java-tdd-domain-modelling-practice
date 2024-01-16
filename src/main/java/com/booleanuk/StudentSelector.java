@@ -1,6 +1,14 @@
 package com.booleanuk;
 
+import java.util.List;
+
 public class StudentSelector {
+
+    public List<String> students;
+
+    public StudentSelector() {
+
+    }
 
     public boolean run() {
        if(showMenu()) {
@@ -18,6 +26,10 @@ public class StudentSelector {
         System.out.println("D: ");
 
         return true;
+    }
+
+    public boolean optionA() {
+        return false;
     }
 
     public static void main(String[] args) {

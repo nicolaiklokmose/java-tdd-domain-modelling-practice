@@ -29,12 +29,12 @@ Implement a random student selector similar to the one used during lessons.
 ```
 ### Class StudentSelector
 
-| Member Variables | Methods    | Scenario                                               | Output                                |
+| Member Variables | Methods    | Scenario                                               | Return / Output                       |
 |------------------|------------|--------------------------------------------------------|---------------------------------------|
 |                  | run()      | When I launch the program, it starts if possible       | If success: true _ else: false        |
 |                  | showMenu() | When the program has successfully launched,            | If success: Show menu _ else: abort() |
 |                  |            | show the user its allows inputs.                       |                                       |
-|                  | optionA()  | When I want to randomly select a student from the list | If success: Print the student         |
+|                  | optionA()  | When I want to randomly select a student from the list | If success: Return student and print  |
 
 
 ```

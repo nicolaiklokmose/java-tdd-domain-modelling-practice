@@ -18,4 +18,10 @@ public class CoreTest {
         Assertions.assertTrue(s.showMenu());
     }
 
+    @Test
+    public void testOptionA() {
+        StudentSelector s = new StudentSelector();
+        Assertions.assertTrue(s.students.contains("Nicolai Klokmose"));
+    }
+
 }
