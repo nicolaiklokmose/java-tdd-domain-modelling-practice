@@ -122,6 +122,10 @@ public class StudentSelector {
         return pairs;
     }
 
+    public String[][] optionC() {
+        return new String[0][0];
+    }
+
     public List<String> instantiateListFromFile(String filePath) {
         List<String> students = new ArrayList<>();
         try (Scanner scanner = new Scanner(new File(filePath))) {

@@ -42,4 +42,11 @@ public class CoreTest {
         //Assertions.assertNotEquals(new String[0][0], s.optionB());
     }
 
+    @Test
+    public void testOptionC() {
+        StudentSelector s = new StudentSelector();
+        Assertions.assertTrue(s.students.contains(s.optionC()[0][1]));
+        //Assertions.assertNotEquals(new String[0][0], s.optionB());
+    }
+
 }
