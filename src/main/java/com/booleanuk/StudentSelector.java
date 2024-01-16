@@ -21,6 +21,7 @@ public class StudentSelector {
         students.add("Miley Cyrus");
         students.add("Yugi Moto");
         students.add("Seto Kaiba");
+        students.add("Natalie Portman");
     }
 
     public boolean run() {
@@ -47,8 +48,19 @@ public class StudentSelector {
                     System.out.println(optionA());
                     break;
                 case "B":
-                    String[] pair = optionB();
-                    System.out.println(pair[0] + " " + pair[1]);
+                    String[][] pairs = optionB();
+                    for (int i = 0; i < pairs.length; i++) {
+                        System.out.print("(" + (i+1) + ") " + "[");
+                        for (int j = 0; j < pairs[i].length; j++) {
+                            System.out.print(pairs[i][j]);
+                            if (j == 0) {
+                                System.out.print(", ");
+                            }
+
+                        }
+                        System.out.println("]");
+                    }
+                    // Remove this men filepath works
                     break;
                 case "C":
                     System.out.println("placeholder optionC");
@@ -83,13 +95,25 @@ public class StudentSelector {
         return this.students.get(random.nextInt(0, this.students.size()));
     }
 
-    public String[] optionB() {
-        String firstPerson = this.students.get(this.random.nextInt(0, this.students.size()));
-        String secondPerson = this.students.get(this.random.nextInt(0, this.students.size()));
-        while (firstPerson.equalsIgnoreCase(secondPerson)) {
-            secondPerson = this.students.get(this.random.nextInt(0, this.students.size()));
+    public String[][] optionB() {
+        String[][] pairs = new String[this.students.size()/2][2];
+        int counter = 0;
+        while (this.students.size() > 1) {
+            String[] pair;
+            int firstPerson = this.random.nextInt(0, this.students.size());
+            int secondPerson = this.random.nextInt(0, this.students.size());
+
+            while (firstPerson == secondPerson) {
+                secondPerson = this.random.nextInt(0, this.students.size());
+            }
+
+            pair = new String[]{this.students.get(firstPerson), this.students.get(secondPerson)};
+            this.students.remove(firstPerson);
+            this.students.remove(secondPerson - 1);
+            pairs[counter] = pair;
+            counter++;
         }
-        return new String[]{firstPerson, secondPerson};
+        return pairs;
     }
 
     public List<String> instantiateListFromFile(String filePath) {
