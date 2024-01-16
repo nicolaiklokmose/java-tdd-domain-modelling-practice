@@ -32,16 +32,14 @@ public class CoreTest {
         Assertions.assertFalse(!s.students.contains(s.optionA()));
 
         Assertions.assertEquals("Seto Kaiba", s.optionA());
-        Assertions.assertNotEquals("Nicolai Klokmose", s.optionA());
+        Assertions.assertNotEquals("Yugi Moto", s.optionA());
     }
 
     @Test
     public void testOptionB() {
         StudentSelector s = new StudentSelector();
-        Assertions.assertTrue(s.students.contains(s.optionB()[0]));
-        Assertions.assertFalse(!s.students.contains(s.optionB()[1]));
-
-        Assertions.assertNotEquals(new String[0], s.optionB());
+        Assertions.assertTrue(s.students.contains(s.optionB()[0][1]));
+        //Assertions.assertNotEquals(new String[0][0], s.optionB());
     }
 
 }

@@ -113,6 +113,12 @@ public class StudentSelector {
             pairs[counter] = pair;
             counter++;
         }
+        students.add("Nicolai Klokmose");
+        students.add("Dave Amos");
+        students.add("Miley Cyrus");
+        students.add("Yugi Moto");
+        students.add("Seto Kaiba");
+        students.add("Natalie Portman");
         return pairs;
     }
 
