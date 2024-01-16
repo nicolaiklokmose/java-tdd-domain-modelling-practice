@@ -27,6 +27,15 @@ Implement a random student selector similar to the one used during lessons.
 ```
 2. When I select the option it will output a randomly chosen student from the list.
 ```
+### Class StudentSelector
+
+| Member Variables | Methods    | Scenario                                               | Output                                |
+|------------------|------------|--------------------------------------------------------|---------------------------------------|
+|                  | run()      | When I launch the program, it starts if possible       | If success: true _ else: false        |
+|                  | showMenu() | When the program has successfully launched,            | If success: Show menu _ else: abort() |
+|                  |            | show the user its allows inputs.                       |                                       |
+|                  | optionA()  | When I want to randomly select a student from the list | If success: Print the student         |
+
 
 ```
 3. When I select the option it will output a list of all of the students as randomly chosen pairs.
