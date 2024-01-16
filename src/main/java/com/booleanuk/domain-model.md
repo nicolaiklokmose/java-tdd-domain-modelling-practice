@@ -56,6 +56,17 @@ Implement a random student selector similar to the one used during lessons.
 ```
 4. When I select the option it will output a random list of Peer Groups for all of the students (groups of 4 students).
 ```
+### Class StudentSelector
+
+| Member Variables | Methods                   | Scenario                                               | Return / Output                       |
+|------------------|---------------------------|--------------------------------------------------------|---------------------------------------|
+| filePath: String | run()                     | When I launch the program, it starts if possible       | If success: true _ else: false        |
+| students: List   | showMenu()                | When the program has successfully launched,            | If success: Show menu _ else: abort() |
+| random: Random   |                           | show the user its allows inputs.                       |                                       |
+|                  | optionA()                 | When I want to randomly select a student from the list | If success: Return student and print  |
+|                  | instantiateListFromFile() | When I run program_A I want it to contain the students | If success: true _ else: false        |
+|                  | optionB()                 | When I want to randomly select students as pairs       |                                       |
+|                  | optionC()                 | When I want ro randomly select students as groups of 4 |                                       |
 
 ```
 5. When I run the program it should load the list of current students from a text file.
