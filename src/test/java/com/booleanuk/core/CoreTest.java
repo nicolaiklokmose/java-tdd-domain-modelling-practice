@@ -35,4 +35,13 @@ public class CoreTest {
         Assertions.assertNotEquals("Nicolai Klokmose", s.optionA());
     }
 
+    @Test
+    public void testOptionB() {
+        StudentSelector s = new StudentSelector();
+        Assertions.assertTrue(s.students.contains(s.optionB()));
+        Assertions.assertFalse(!s.students.contains(s.optionB()));
+
+        Assertions.assertEquals(new String[0], s.optionB());
+    }
+
 }

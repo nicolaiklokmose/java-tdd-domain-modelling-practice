@@ -79,6 +79,10 @@ public class StudentSelector {
         return this.students.get(random.nextInt(0, this.students.size()));
     }
 
+    public String[] optionB() {
+        return new String[0];
+    }
+
     public List<String> instantiateListFromFile(String filePath) {
         List<String> students = new ArrayList<>();
         try (Scanner scanner = new Scanner(new File(filePath))) {
