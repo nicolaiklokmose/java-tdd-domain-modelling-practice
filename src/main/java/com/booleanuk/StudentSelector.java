@@ -2,10 +2,7 @@ package com.booleanuk;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class StudentSelector {
 
@@ -22,6 +19,8 @@ public class StudentSelector {
         students.add("Yugi Moto");
         students.add("Seto Kaiba");
         students.add("Natalie Portman");
+        students.add("Steve Jobs");
+        students.add("Matthew Wilson");
     }
 
     public boolean run() {
@@ -63,10 +62,19 @@ public class StudentSelector {
                     // Remove this men filepath works
                     break;
                 case "C":
-                    System.out.println("placeholder optionC");
-                    break;
-                case "D":
-                    System.out.println("placeholder optionD");
+                    String[][] pairs_peers = optionC();
+                    for (int i = 0; i < pairs_peers.length; i++) {
+                        System.out.print("(" + (i+1) + ") " + "[");
+                        for (int j = 0; j < pairs_peers[i].length; j++) {
+                            System.out.print(pairs_peers[i][j]);
+                            if (j < 3 ) {
+                                System.out.print(", ");
+                            }
+
+                        }
+                        System.out.println("]");
+                    }
+                    // Remove this men filepath works
                     break;
                 default:
                     System.out.println("Invalid Operand, terminating cus noob...");
@@ -85,9 +93,8 @@ public class StudentSelector {
     public void printMenu() {
         System.out.println("Please select one of the following options:" + "\n");
         System.out.println("A: Select a random student");
-        System.out.println("B: ");
-        System.out.println("C: ");
-        System.out.println("D: ");
+        System.out.println("B: Randomly Generate pairs of Students");
+        System.out.println("C: Randomly Generate peer-pairs of Students");
         System.out.println("X: Exit the Program");
     }
 
@@ -119,11 +126,50 @@ public class StudentSelector {
         students.add("Yugi Moto");
         students.add("Seto Kaiba");
         students.add("Natalie Portman");
+        students.add("Steve Jobs");
+        students.add("Matthew Wilson");
         return pairs;
     }
 
     public String[][] optionC() {
-        return new String[0][0];
+        String[][] pairs = new String[this.students.size()/4][4];
+        int counter = 0;
+        while (this.students.size() > 3) {
+            String[] pair_four;
+
+            HashSet<Integer> set = new HashSet<>();
+            while (set.size() < 4) {
+                set.add(this.random.nextInt(0, this.students.size()));
+            }
+            Integer[] setToArray = set.toArray(new Integer[0]);
+
+            int firstPerson = setToArray[0];
+            int secondPerson = setToArray[1];
+            int thirdPerson = setToArray[2];
+            int fourthPerson = setToArray[3];
+
+            pair_four = new String[]{this.students.get(firstPerson), this.students.get(secondPerson), this.students.get(thirdPerson), this.students.get(fourthPerson)};
+
+            for (int i = 0; i < this.students.size(); i++) {
+                for (int j = 0; j < pair_four.length; j++) {
+                    if (this.students.get(j) == pair_four[i]) {
+                        this.students.remove(j);
+                        break;
+                    }
+                }
+            }
+            pairs[counter] = pair_four;
+            counter++;
+        }
+        students.add("Nicolai Klokmose");
+        students.add("Dave Amos");
+        students.add("Miley Cyrus");
+        students.add("Yugi Moto");
+        students.add("Seto Kaiba");
+        students.add("Natalie Portman");
+        students.add("Steve Jobs");
+        students.add("Matthew Wilson");
+        return pairs;
     }
 
     public List<String> instantiateListFromFile(String filePath) {
