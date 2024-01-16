@@ -19,9 +19,20 @@ public class CoreTest {
     }
 
     @Test
-    public void testOptionA() {
+    public void testInstantiateListFromFile() {
         StudentSelector s = new StudentSelector();
         Assertions.assertTrue(s.students.contains("Nicolai Klokmose"));
+        Assertions.assertFalse(s.students.contains("Dennis Bergkamp"));
+    }
+
+    @Test
+    public void testOptionA() {
+        StudentSelector s = new StudentSelector();
+        Assertions.assertTrue(s.students.contains(s.optionA()));
+        Assertions.assertFalse(!s.students.contains(s.optionA()));
+
+        Assertions.assertEquals("Dave Amos", s.optionA());
+        Assertions.assertNotEquals("Nicolai Klokmose", s.optionA());
     }
 
 }
