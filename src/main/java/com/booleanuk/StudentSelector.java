@@ -45,6 +45,7 @@ public class StudentSelector {
                     break;
                 case "A":
                     System.out.println(optionA());
+                    System.exit(0);
                     break;
                 case "B":
                     String[][] pairs = optionB();
@@ -59,6 +60,7 @@ public class StudentSelector {
                         }
                         System.out.println("]");
                     }
+                    System.exit(0);
                     // Remove this men filepath works
                     break;
                 case "C":
@@ -75,18 +77,13 @@ public class StudentSelector {
                         System.out.println("]");
                     }
                     // Remove this men filepath works
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Invalid Operand, terminating cus noob...");
                     break;
             }
-            printMenu();
-
-            if (input.equalsIgnoreCase("x")) {
-                System.exit(0);
-            }
         }
-
         return true;
     }
 
@@ -115,19 +112,17 @@ public class StudentSelector {
             }
 
             pair = new String[]{this.students.get(firstPerson), this.students.get(secondPerson)};
-            this.students.remove(firstPerson);
-            this.students.remove(secondPerson - 1);
+            for (int i = 0; i < pair.length; i++) {
+                for (int j = 0; j < this.students.size(); j++) {
+                    if (this.students.get(j) == pair[i]) {
+                        this.students.remove(j);
+                        break;
+                    }
+                }
+            }
             pairs[counter] = pair;
             counter++;
         }
-        students.add("Nicolai Klokmose");
-        students.add("Dave Amos");
-        students.add("Miley Cyrus");
-        students.add("Yugi Moto");
-        students.add("Seto Kaiba");
-        students.add("Natalie Portman");
-        students.add("Steve Jobs");
-        students.add("Matthew Wilson");
         return pairs;
     }
 
@@ -161,14 +156,6 @@ public class StudentSelector {
             pairs[counter] = pair_four;
             counter++;
         }
-        students.add("Nicolai Klokmose");
-        students.add("Dave Amos");
-        students.add("Miley Cyrus");
-        students.add("Yugi Moto");
-        students.add("Seto Kaiba");
-        students.add("Natalie Portman");
-        students.add("Steve Jobs");
-        students.add("Matthew Wilson");
         return pairs;
     }
 
@@ -188,7 +175,7 @@ public class StudentSelector {
 
     public static void main(String[] args) {
         StudentSelector s = new StudentSelector();
-        s.showMenu();
+        s.run();
         //s.instantiateListFromFile("/names");
     }
 
