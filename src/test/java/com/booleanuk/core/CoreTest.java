@@ -12,4 +12,10 @@ public class CoreTest {
         Assertions.assertTrue(s.run());
     }
 
+    @Test
+    public void testShowMenu() {
+        StudentSelector s = new StudentSelector();
+        Assertions.assertTrue(s.showMenu());
+    }
+
 }
