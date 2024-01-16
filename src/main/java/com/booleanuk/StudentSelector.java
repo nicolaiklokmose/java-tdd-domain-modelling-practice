@@ -18,6 +18,9 @@ public class StudentSelector {
         this.students = new ArrayList<>();
         students.add("Nicolai Klokmose");
         students.add("Dave Amos");
+        students.add("Miley Cyrus");
+        students.add("Yugi Moto");
+        students.add("Seto Kaiba");
     }
 
     public boolean run() {
@@ -44,7 +47,8 @@ public class StudentSelector {
                     System.out.println(optionA());
                     break;
                 case "B":
-                    System.out.println("placeholder optionB");
+                    String[] pair = optionB();
+                    System.out.println(pair[0] + " " + pair[1]);
                     break;
                 case "C":
                     System.out.println("placeholder optionC");
@@ -80,7 +84,12 @@ public class StudentSelector {
     }
 
     public String[] optionB() {
-        return new String[0];
+        String firstPerson = this.students.get(this.random.nextInt(0, this.students.size()));
+        String secondPerson = this.students.get(this.random.nextInt(0, this.students.size()));
+        while (firstPerson.equalsIgnoreCase(secondPerson)) {
+            secondPerson = this.students.get(this.random.nextInt(0, this.students.size()));
+        }
+        return new String[]{firstPerson, secondPerson};
     }
 
     public List<String> instantiateListFromFile(String filePath) {
