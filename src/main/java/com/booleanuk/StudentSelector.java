@@ -29,13 +29,50 @@ public class StudentSelector {
 
     public boolean showMenu() {
         System.out.println("Welcome to the random Student Selector Program" + "\n");
+        printMenu();
+
+        Scanner sc = new Scanner(System.in);
+        String input = "";
+
+        while (sc.hasNext()) {
+            input = sc.nextLine();
+            switch (input) {
+                case "x":
+                    System.exit(0);
+                    break;
+                case "A":
+                    System.out.println(optionA());
+                    break;
+                case "B":
+                    System.out.println("placeholder optionB");
+                    break;
+                case "C":
+                    System.out.println("placeholder optionC");
+                    break;
+                case "D":
+                    System.out.println("placeholder optionD");
+                    break;
+                default:
+                    System.out.println("Invalid Operand, terminating cus noob...");
+                    break;
+            }
+            printMenu();
+
+            if (input.equalsIgnoreCase("x")) {
+                System.exit(0);
+            }
+        }
+
+        return true;
+    }
+
+    public void printMenu() {
         System.out.println("Please select one of the following options:" + "\n");
         System.out.println("A: Select a random student");
         System.out.println("B: ");
         System.out.println("C: ");
         System.out.println("D: ");
-
-        return true;
+        System.out.println("X: Exit the Program");
     }
 
     public String optionA() {
@@ -59,7 +96,6 @@ public class StudentSelector {
     public static void main(String[] args) {
         StudentSelector s = new StudentSelector();
         s.showMenu();
-        System.out.println(s.optionA());
         //s.instantiateListFromFile("/names");
     }
 
