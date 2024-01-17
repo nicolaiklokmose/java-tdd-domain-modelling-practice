@@ -93,4 +93,23 @@ Thinking about the Poker Challenge implement a deck of cards (52 cards - 4 suits
 
 7. I should be able to cut the cards and see a card from an arbitrary point in the deck.
 ```
+### Class Card
 
+| Member Variables | Methods | Scenario | Return | Output |
+|------------------|---------|----------|--------|--------|
+| suit: Suit       |         |          |        |        |
+| rank: Rank       |         |          |        |        |
+
+
+
+### Class PlayingCards
+
+| Member Variables | Methods                  | Scenario                                 | Return | Output  |
+|------------------|--------------------------|------------------------------------------|--------|---------|
+| cards: List      | initializeCards()        | When I want to create list of Cards      | void   | null    |
+|                  | shuffleCards()           | When I want to shuffle the list of cards | void   | null    |
+|                  | currentState()           | When I want to see list of cards         | void   | Sys.out |
+|                  | createHand()             | When I want to create a hand of cards    | void   | Sys.out |
+|                  | dealFourHandsFiveCards() | When I want to simulate Poker            | void   | Sys.out |
+|                  | viewTopCard()            | When I want to see the card on top       | void   | Sys.out |
+|                  | cutCards()               | When I want to see individual cards      | void   | Sys.out |
